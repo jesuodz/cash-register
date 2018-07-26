@@ -1,0 +1,16 @@
+{
+  "name": "cash-register",
+  "version": "1.0.0",
+  "description": "Cash register algorithm project for freeCodeCamp",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha tests/test.js",
+    "start": "node tests/start.js"
+  },
+  "keywords": [
+    "javascript",
+    "freeCodeCamp"
+  ],
+  "author": "Jesus Ordosgoitty",
+  "license": "MIT"
+}
