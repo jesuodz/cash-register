@@ -1,10 +1,15 @@
 const register = {};
 
 register.checkCash = function (price, cash, cid) {
-    var change;
-    // Here is your change, ma'am.
-    return {};
-    return change;
-  }
+    let isEnough = (price >= cash) ? true : false;
+    let obj = {};
+
+    if (!isEnough) {
+        obj.status = 'INSUFFICIENT_FUNDS';
+        obj.change = [];
+    }
+
+    return obj;
+}
 
 module.exports = register;
