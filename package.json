@@ -4,7 +4,7 @@
   "description": "Cash register algorithm project for freeCodeCamp",
   "main": "index.js",
   "scripts": {
-    "test": "mocha tests/test.js",
+    "test": "clear && mocha tests/test.js",
     "start": "node tests/start.js"
   },
   "keywords": [
