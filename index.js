@@ -17,9 +17,11 @@ register.checkCash = (price, cash, cid) => {
       return output;
     }
 
-    if (!isEnough) {
-        obj.status = 'INSUFFICIENT_FUNDS';
-        obj.change = [];
+    // Can't afford a simple change
+    if (total < changeDue) {
+        output.status = 'INSUFFICIENT_FUNDS';
+        output.changeDue = [];
+        return output;
     }
 
     return output;
