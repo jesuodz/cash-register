@@ -1,26 +1,26 @@
 const register = {};
 
 register.checkCash = (price, cash, cid) => {
-    var output = { change: [] };
-    var changeDue = cash - price;
+    let output = { change: [] };
+    let changeDue = cash - price;
 
     // What's in my register
-    var total = cid.reduce( (accum, currVal) => {
-        accum += currVal[1];
+    let registerTotal = cid.reduce( (accum, curr) => {
+        accum += curr[1];
         return accum;
     }, 0);
 
     // Register is empty
-    if (total === changeDue) {
+    if (registerTotal === changeDue) {
       output.status = 'CLOSED';
-      output.changeDue = cid;
+      output.change = cid;
       return output;
     }
 
     // Can't afford a simple change
-    if (total < changeDue) {
+    if (registerTotal < changeDue) {
         output.status = 'INSUFFICIENT_FUNDS';
-        output.changeDue = [];
+        output.change = [];
         return output;
     }
 
